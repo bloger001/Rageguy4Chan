@@ -77,7 +77,7 @@
   <script>
     async function loadData() {
       try {
-        const url = "https://api.dexscreener.com/latest/dex/tokens/G3FoXHoQDuGkEG8ZqQd7riC9uB1N51bg7JuxJEPN";
+        const url = "https://api.dexscreener.com/latest/dex/pairs/solana/G3FoXHoQDuGkEG8ZqQd7riC9uB1N51bg7JuxJEPN";
         let res = await fetch(url);
         let data = await res.json();
 
@@ -86,6 +86,10 @@
           document.getElementById("price").innerText = "$" + parseFloat(pair.priceUsd).toFixed(6);
           document.getElementById("liq").innerText = "$" + pair.liquidity.usd.toLocaleString();
           document.getElementById("mcap").innerText = "$" + pair.fdv.toLocaleString();
+        } else {
+          document.getElementById("price").innerText = "N/A";
+          document.getElementById("liq").innerText = "N/A";
+          document.getElementById("mcap").innerText = "N/A";
         }
       } catch (e) {
         console.error("Error fetching data:", e);
