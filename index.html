@@ -1,241 +1,139 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>RageGuy — Live token page</title>
-  <meta name="description" content="RageGuy memecoin live page — price, liquidity, chart and latest X post." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAGEGUY (FUUU)</title>
   <style>
-    :root{
-      --bg:#071023; --card:#0f1724; --muted:#9fb0cc; --accent:#ff5b6e;
-      --glass: rgba(255,255,255,0.03);
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #eee;
+      margin: 0;
+      padding: 0;
+      text-align: center;
     }
-    *{box-sizing:border-box}
-    body{margin:0;background:linear-gradient(180deg,var(--bg),#07111d);color:#eaf4ff;-webkit-font-smoothing:antialiased}
-    .wrap{max-width:1100px;margin:28px auto;padding:18px}
-    header{display:flex;gap:14px;align-items:center}
-    .logo{width:76px;height:76px;border-radius:14px;background:linear-gradient(180deg,#ff7a90,#ff5b6e);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:26px;color:#111;box-shadow:0 10px 30px rgba(255,91,110,0.12)}
-    h1{margin:0;font-size:22px}
-    .sub{color:var(--muted);font-size:13px;margin-top:6px}
-    .grid{display:grid;grid-template-columns:360px 1fr;gap:18px;margin-top:18px}
-    .card{background:var(--card);border-radius:12px;padding:14px;box-shadow:0 8px 28px rgba(2,6,23,0.6)}
-    .meta-row{display:flex;justify-content:space-between;align-items:center;padding:9px;background:var(--glass);border-radius:10px;margin-top:10px;font-size:14px}
-    .btn{padding:10px 12px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
-    .btn-primary{background:linear-gradient(90deg,#ff5b6e,#ff917f);color:#111}
-    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
-    .small{font-size:13px;color:var(--muted)}
-    a.pill{display:inline-block;padding:7px 10px;background:rgba(255,255,255,0.02);border-radius:999px;margin-right:8px;color:var(--muted);text-decoration:none}
-    .right-col{display:flex;flex-direction:column;gap:12px}
-    iframe{border:0;border-radius:10px}
-    .error{color:#ff9aa2;background:rgba(255,0,0,0.03);padding:8px;border-radius:8px;font-size:13px}
-    @media (max-width:920px){ .grid{grid-template-columns:1fr} .logo{width:64px;height:64px} }
+    header {
+      padding: 20px;
+      background: #222;
+    }
+    h1 {
+      margin: 0;
+      color: #ff4444;
+    }
+    section {
+      margin: 20px auto;
+      max-width: 900px;
+      padding: 20px;
+      background: #1a1a1a;
+      border-radius: 10px;
+    }
+    iframe {
+      border: none;
+      border-radius: 8px;
+    }
+    .token-logo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin: 10px auto;
+      display: block;
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="logo">FUU</div>
-      <div>
-        <h1>RageGuy • RAGE (Solana)</h1>
-        <div class="sub">Mint: <code id="mint">G3FoXHoQDuGkEG8ZqQd7riC9uB1N51bg7JuxJEPN</code></div>
-      </div>
-    </header>
+  <header>
+    <img id="header-logo" class="token-logo" src="" alt="Token Logo">
+    <h1>RAGEGUY (FUUU)</h1>
+    <p>The Meme. The Legend. The Rage.</p>
+  </header>
 
-    <div class="grid">
-      <!-- LEFT: token card -->
-      <div class="card">
-        <div style="display:flex;justify-content:space-between;align-items:center">
-          <div>
-            <div style="font-weight:800;font-size:16px">RageGuy (RAGE)</div>
-            <div class="small" style="margin-top:6px">Classic rage-meme token — community asset</div>
-          </div>
-          <div style="text-align:right">
-            <div id="priceBig" style="font-size:18px;font-weight:900">--</div>
-            <div class="small">price</div>
-          </div>
-        </div>
+  <!-- Token Info -->
+  <section>
+    <h2>Token Info</h2>
+    <img id="info-logo" class="token-logo" src="" alt="Token Logo">
+    <p><strong>Contract:</strong> 4XUUrG5a7vHpotaAhF5fm9YCPpBcWDnjSmmYU61Sh6qR</p>
+    <p><strong>Total Supply:</strong> 1,000,000,000</p>
+    <p><strong>Decimals:</strong> 9</p>
+  </section>
 
-        <div style="margin-top:12px;display:flex;gap:8px">
-          <a id="buyBtn" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Buy (Jupiter)</a>
-          <a id="solscanBtn" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Open on Solscan</a>
-        </div>
+  <!-- About (Meme Style) -->
+  <section>
+    <h2>About RAGEGUY</h2>
+    <p>
+      Remember the good old days of the internet when every annoyance ended with a 
+      screaming face shouting <strong>“FUUUUUUU–”</strong>? Yeah, that guy is back. 
+    </p>
+    <p>
+      RAGEGUY (FUUU) isn’t here to promise utility, roadmaps, or world domination. 
+      He’s here to <em>rage</em>, to meme, and to remind the internet why 2010 was peak culture.  
+    </p>
+    <p>
+      Supply capped at 1,000,000,000 coins because math is hard when you’re angry.  
+      No presale, no VC, no promises — just pure meme-fueled chaos on Solana.  
+    </p>
+    <p>
+      Join the movement, spam the memes, and let’s FUUU our way to the moon 🚀.  
+    </p>
+  </section>
 
-        <div style="margin-top:14px">
-          <div class="meta-row"><div>Total supply</div><div id="supply">1,000,000,000</div></div>
-          <div class="meta-row"><div>Holders</div><div id="holders">--</div></div>
-          <div class="meta-row"><div>Liquidity (USD)</div><div id="liq">$ --</div></div>
-          <div class="meta-row"><div>24h Volume</div><div id="vol">$ --</div></div>
-          <div class="meta-row"><div>FDV (approx)</div><div id="fdv">$ --</div></div>
-          <div class="meta-row"><div>24h Change</div><div id="chg">--</div></div>
-        </div>
+  <!-- Live On-chain Data -->
+  <section>
+    <h2>Live On-chain Data</h2>
+    <p><strong>Price:</strong> <span id="price">Loading...</span></p>
+    <p><strong>Liquidity:</strong> <span id="liq">Loading...</span></p>
+    <p><strong>Market Cap:</strong> <span id="mcap">Loading...</span></p>
+  </section>
 
-        <div style="margin-top:12px">
-          <div class="small">Quick links</div>
-          <div style="margin-top:8px">
-            <a id="dexPairLink" class="pill" target="_blank" rel="noopener noreferrer">Open pair on Dexscreener</a>
-            <a id="txLink" class="pill" target="_blank" rel="noopener noreferrer">Recent txns (Solscan)</a>
-          </div>
-        </div>
+  <!-- Chart -->
+  <section>
+    <h2>Live Chart</h2>
+    <iframe 
+      src="https://dexscreener.com/solana/4XUUrG5a7vHpotaAhF5fm9YCPpBcWDnjSmmYU61Sh6qR" 
+      width="100%" height="500">
+    </iframe>
+  </section>
 
-        <div style="margin-top:12px" class="small">
-          <div style="margin-bottom:6px"><strong>Status:</strong> <span id="statusText">Loading market data…</span></div>
-          <div class="small">If values show "N/A" the API might be blocked — use the Dexscreener link to view live charts.</div>
-        </div>
-      </div>
+  <!-- Twitter Feed -->
+  <section>
+    <h2>Latest Updates</h2>
+    <a class="twitter-timeline" href="https://twitter.com/rageguy4chan">
+      Tweets by RageGuy
+    </a>
+  </section>
 
-      <!-- RIGHT: chart + tweet -->
-      <div class="right-col">
-        <div class="card">
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <div style="font-weight:700">Live Chart</div>
-            <div class="small">Source: Dexscreener</div>
-          </div>
-          <div style="margin-top:10px">
-            <!-- Pair page iframe (explicit pair id) -->
-            <iframe id="dexIframe" src="https://dexscreener.com/solana/4XUUrG5a7vHpotaAhF5fm9YCPpBcWDnjSmmYU61Sh6qR" width="100%" height="420" title="Dexscreener chart"></iframe>
-          </div>
-        </div>
-
-        <div class="card">
-          <div style="font-weight:700">Latest from X</div>
-          <div style="margin-top:10px">
-            <!-- embedded tweet -->
-            <blockquote class="twitter-tweet"><a href="https://x.com/rageguy4chan/status/1963759441494397333?s=46"></a></blockquote>
-            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
+  <script async src="https://platform.twitter.com/widgets.js"></script>
   <script>
-  // -----------------------
-  // CONFIG
-  // -----------------------
-  const TOKEN_MINT = "G3FoXHoQDuGkEG8ZqQd7riC9uB1N51bg7JuxJEPN"; // token mint
-  const DEX_PAIR_ID = "4XUUrG5a7vHpotaAhF5fm9YCPpBcWDnjSmmYU61Sh6qR"; // provided pair id
-  const DEXSCREENER_PAIR_API = `https://api.dexscreener.com/latest/dex/pairs/solana/${DEX_PAIR_ID}`;
-  const DEXSCREENER_PAIR_PAGE = `https://dexscreener.com/solana/${DEX_PAIR_ID}`;
-  const SOLSCAN_PAIR_PAGE = "https://solscan.io/account/4XUUrG5a7vHpotaAhF5fm9YCPpBcWDnjSmmYU61Sh6qR";
-
-  // Put links into page
-  document.getElementById('mint').textContent = TOKEN_MINT;
-  document.getElementById('buyBtn').href = `https://jup.ag/swap?input=SOL&output=${TOKEN_MINT}`;
-  document.getElementById('solscanBtn').href = SOLSCAN_PAIR_PAGE;
-  document.getElementById('dexPairLink').href = DEXSCREENER_PAIR_PAGE;
-  document.getElementById('txLink').href = SOLSCAN_PAIR_PAGE + "#transactions";
-
-  // -----------------------
-  // UTIL
-  // -----------------------
-  function n(n){
-    if(n === null || n === undefined || isNaN(n)) return "--";
-    if(Math.abs(n) >= 1e9) return (n/1e9).toFixed(2) + "B";
-    if(Math.abs(n) >= 1e6) return (n/1e6).toFixed(2) + "M";
-    if(Math.abs(n) >= 1e3) return (n/1e3).toFixed(2) + "K";
-    return (Math.round(n*100)/100).toLocaleString();
-  }
-  function fmtPrice(p){
-    if(p === null || p === undefined || isNaN(p)) return "--";
-    if(Math.abs(p) < 1) return parseFloat(p).toFixed(6);
-    if(Math.abs(p) < 100) return parseFloat(p).toFixed(4);
-    return parseFloat(p).toFixed(2);
-  }
-  // safe fetch with timeout
-  async function safeFetch(url, options = {}, timeout = 8000){
-    const controller = new AbortController();
-    const id = setTimeout(()=>controller.abort(), timeout);
-    try {
-      const res = await fetch(url, {signal: controller.signal, ...options});
-      clearTimeout(id);
-      return res;
-    } catch (err) {
-      clearTimeout(id);
-      throw err;
-    }
-  }
-
-  // -----------------------
-  // DATA LOADER: try direct API, fallback to AllOrigins if blocked
-  // -----------------------
-  async function loadDexData(){
-    const statusEl = document.getElementById('statusText');
-    statusEl.textContent = "Fetching DEX data...";
-    let json = null;
-
-    // attempt direct fetch
-    try {
-      const r = await safeFetch(DEXSCREENER_PAIR_API, {}, 7000);
-      if(!r.ok) throw new Error("non-200: " + r.status);
-      json = await r.json();
-    } catch (err){
-      // fallback via public CORS proxy (AllOrigins) — only used if direct blocked
+    async function loadData() {
       try {
-        statusEl.textContent = "Direct API blocked — trying fallback proxy…";
-        const proxy = "https://api.allorigins.win/raw?url=" + encodeURIComponent(DEXSCREENER_PAIR_API);
-        const r2 = await safeFetch(proxy, {}, 10000);
-        if(!r2.ok) throw new Error("proxy non-200: " + r2.status);
-        json = await r2.json();
-      } catch (err2){
-        console.error("Both direct and proxy failed:", err, err2);
-        statusEl.textContent = "Could not fetch live data (API blocked). Use Dexscreener link.";
-        setPlaceholdersError();
-        return;
+        const url = "https://api.dexscreener.com/latest/dex/pairs/solana/4XUUrG5a7vHpotaAhF5fm9YCPpBcWDnjSmmYU61Sh6qR";
+        let res = await fetch(url);
+        let data = await res.json();
+
+        if (data.pair) {
+          let pair = data.pair;
+
+          // Update price data
+          document.getElementById("price").innerText = "$" + parseFloat(pair.priceUsd).toFixed(6);
+          document.getElementById("liq").innerText = "$" + pair.liquidity.usd.toLocaleString();
+          document.getElementById("mcap").innerText = "$" + pair.fdv.toLocaleString();
+
+          // Update logos
+          if (pair.info && pair.info.imageUrl) {
+            document.getElementById("header-logo").src = pair.info.imageUrl;
+            document.getElementById("info-logo").src = pair.info.imageUrl;
+          }
+        } else {
+          document.getElementById("price").innerText = "N/A";
+          document.getElementById("liq").innerText = "N/A";
+          document.getElementById("mcap").innerText = "N/A";
+        }
+      } catch (e) {
+        console.error("Error fetching data:", e);
       }
     }
-
-    // parse returned JSON (be defensive with shapes)
-    let pair = null;
-    if(json.pair) pair = json.pair;
-    else if(json.pairs && Array.isArray(json.pairs) && json.pairs.length) pair = json.pairs[0];
-    else if(json.length && Array.isArray(json) && json.length) pair = json[0];
-    else pair = json;
-
-    // common fields used by Dexscreener responses:
-    // pair.priceUsd, pair.priceChange, pair.liquidity.usd, pair.fdv, pair.volumeUsd24h, pair.priceChange24h
-    try {
-      const price = parseFloat(pair.priceUsd ?? pair.price ?? pair.tokenPrice ?? NaN);
-      const liquidityUsd = (pair.liquidity && pair.liquidity.usd) ? parseFloat(pair.liquidity.usd) : (parseFloat(pair.liquidityUsd || pair.liquidity_usd) || null);
-      const fdv = parseFloat(pair.fdv ?? pair.fdvUsd ?? pair.fullyDilutedValuation ?? NaN);
-      const vol24 = parseFloat(pair.volumeUsd24h ?? pair.volume_24h ?? pair.baseVolume ?? pair.volumeUsd ?? NaN);
-      const change = pair.priceChange ?? pair.priceChange24h ?? pair.priceChangePercent ?? pair.change ?? null;
-
-      // update UI
-      document.getElementById('priceBig').textContent = (price ? "$" + fmtPrice(price) : "--");
-      document.getElementById('liq').textContent = liquidityUsd ? ("$" + n(liquidityUsd)) : "--";
-      document.getElementById('fdv').textContent = fdv ? ("$" + n(fdv)) : "--";
-      document.getElementById('vol').textContent = vol24 ? ("$" + n(vol24)) : "--";
-      document.getElementById('chg').textContent = (change !== null && change !== undefined) ? ( (parseFloat(change) > 0 ? "+" : "") + parseFloat(change).toFixed(2) + "%") : "--";
-
-      // try to get holders if available
-      const holders = pair.holders ?? pair.holderCount ?? null;
-      if(holders) document.getElementById('holders').textContent = holders;
-      else document.getElementById('holders').textContent = "--";
-
-      statusEl.textContent = "Live data updated • " + new Date().toLocaleTimeString();
-    } catch (err){
-      console.error("Failed parse:", err, json);
-      statusEl.textContent = "Data received but parse failed — check console.";
-      setPlaceholdersError();
-    }
-  }
-
-  function setPlaceholdersError(){
-    document.getElementById('priceBig').textContent = "--";
-    document.getElementById('liq').textContent = "--";
-    document.getElementById('fdv').textContent = "--";
-    document.getElementById('vol').textContent = "--";
-    document.getElementById('chg').textContent = "--";
-  }
-
-  // initial load + refresh schedule
-  (function(){
-    loadDexData();                 // initial fetch
-    setInterval(loadDexData, 15000); // refresh every 15s
-  })();
-
+    loadData();
+    setInterval(loadData, 15000); // refresh every 15s
   </script>
 </body>
 </html>
